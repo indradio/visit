@@ -73,7 +73,9 @@
         <div class="row">
           <div class="col-md-12 ml-auto mr-auto">
             <div class="card card-contact no-transition">
-              <h3 class="card-title text-center">Pencegahan Penyebaran Corona Virus</h3>
+              <h3 class="card-title text-center">Pencegahan Penyebaran Virus Corona</h3>
+              <small class="text-center"><i>We apologize not to provide this form in english currently.<br>
+              Please kindly ask your Indonesian colleague or WINTEQ person in charge for assistance</i></small>
               <div class="row">
                 <div class="col-md-4 ml-auto">
                   <div class="card-body">
@@ -213,7 +215,7 @@
                         <div class="col-md-8">
                           <div class="form-check">
                             <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" id="check" value="" required="true">Saya sudah membaca dengan seksama dan saya sudah memberikan informasi yang benar.
+                              <input class="form-check-input" type="checkbox" id="check" value="" required="true">Saya sudah membaca dengan seksama dan saya sudah memberikan informasi yang benar. </br>Saya siap menerima konsekuensi hukum yang muncul jika data yang saya berikan salah.
                               <span class="form-check-sign"></span>
                             </label>
                           </div>
@@ -317,71 +319,10 @@
           }
         });
 
-        $('#email').change(function(){
-          var email = $('#email').val();
-          if(email != ''){
-            $.ajax({
-              url: "<?php echo base_url(); ?>beranda/checkEmail",
-              method: "POST",
-              data: {email:email},
-              success: function(data){
-                $('#email_result').html(data);
-            }
-          });
-          }
-        });
-
       // Javascript method's body can be found in assets/js/core/partials/_demo-object.js
       demo.initContactUsMap2();
     });
 
-    
-    function pendidikanSelect(valueSelect)
-    {
-        var pend = valueSelect.options[valueSelect.selectedIndex].value;
-        document.getElementById("p_lain").style.display = pend == 'Lainnya' ? "block" : 'none';
-    }
-
-    function jabatanSelect(valueSelect)
-    {
-        var jab = valueSelect.options[valueSelect.selectedIndex].value;
-        document.getElementById("j_lain").style.display = jab == 'Lainnya' ? "block" : 'none';
-    }
-
-    function merekSelect(valueSelect)
-    {
-        var mer = valueSelect.options[valueSelect.selectedIndex].value;
-        document.getElementById("m_lain").style.display = mer == 'Lainnya' ? "block" : 'none';
-    }
-
-    $(document).ready(function() {
-        $('#pendidikan').change(function() {
-            var pendidikan = $('#pendidikan').val();
-            if (pendidikan == 'Lainnya') {
-                $('#pendidikan_lainnya').prop('required', true);
-            } else {
-                $('#pendidikan_lainnya').prop('required', false);
-            }
-        });
-
-        $('#jabatan').change(function() {
-            var jabatan = $('#jabatan').val();
-            if (jabatan == 'Lainnya') {
-                $('#jabatan_lainnya').prop('required', true);
-            } else {
-                $('#jabatan_lainnya').prop('required', false);
-            }
-        });
-
-        $('#merek').change(function() {
-            var merek = $('#merek').val();
-            if (merek == 'Lainnya') {
-                $('#merek_lainnya').prop('required', true);
-            } else {
-                $('#merek_lainnya').prop('required', false);
-            }
-        });
-    });
   </script>
 </body>
 

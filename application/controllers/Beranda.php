@@ -56,12 +56,12 @@ class Beranda extends CI_Controller {
 			'perusahaan' => $this->input->post('perusahaan'),
 			'pic' => $this->input->post('pic'),
 			'keperluan' => $this->input->post('keperluan'),
-			'point1' => $this->input->post('point1'),
-			'point2' => $this->input->post('point2'),
-			'point3' => $this->input->post('point3'),
-			'point4' => $this->input->post('point4'),
-			'point5' => $this->input->post('point5'),
-			'point6' => $this->input->post('point6'),
+			'point1' => $point1,
+			'point2' => $point2,
+			'point3' => $point3,
+			'point4' => $point4,
+			'point5' => $point5,
+			'point6' => $point6,
 			'status' => '1'
 		];
 		$this->db->insert('visit', $data);
