@@ -10,7 +10,7 @@ class Beranda extends CI_Controller {
 	public function daftar()
 	{
 		date_default_timezone_set('asia/jakarta');
-		$waktu_kunjugan = date('Y-m-d H:i', strtotime($this->input->post('waktu_kunjungan')));
+		$waktu_kunjungan = date('Y-m-d H:i', strtotime($this->input->post('waktu_kunjungan')));
 		$this->load->helper('string');
 		$id = random_string('alnum',8);
 
@@ -52,7 +52,7 @@ class Beranda extends CI_Controller {
 			'gender' => $this->input->post('gender'),
 			'identitas' => $this->input->post('identitas'),
 			'phone' => '62'.$this->input->post('phone'),
-			'waktu_kunjugan' => $waktu_kunjugan,
+			'waktu_kunjungan' => $waktu_kunjungan,
 			'perusahaan' => $this->input->post('perusahaan'),
 			'pic' => $this->input->post('pic'),
 			'keperluan' => $this->input->post('keperluan'),

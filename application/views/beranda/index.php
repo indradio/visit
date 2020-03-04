@@ -56,7 +56,7 @@
       <div class="collapse navbar-collapse" data-nav-image="<?= base_url(); ?>assets/img/blurred-image-1.jpg" data-color="orange">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="btn btn-round btn-primary" data-scroll="true" data-id="#contact-us" href="<?= base_url(); ?>#contactus">
+            <a class="btn btn-round btn-primary" href="#">
               <i class="nc-icon nc-send"></i> FORM DEKLARASI KESEHATAN
             </a>
           </li>
