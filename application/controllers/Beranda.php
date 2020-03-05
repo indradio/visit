@@ -66,13 +66,20 @@ class Beranda extends CI_Controller {
 		];
 		$this->db->insert('visit', $data);
 
+		if ($point1=='YA' OR $point2=='YA' OR $point3=='YA' OR $point4=='YA' OR $point5=='YA' OR $point6=='YA'){
+			$pesan = "\r\n \r\nAnda dalam kondisi yang kami tidak dapat memberikan ijin untuk berkunjung saat ini. Silahkan menghubungi PIC WINTEQ yang akan anda temui sebelum melakukan kunjungan.";
+		}else{
+			$pesan = "\r\n \r\nPT Astra Otoparts Divisi WINTEQ berhak untuk *“MEMBATALKAN/MENUNDA”* kunjungan anda untuk alasan keselamatan.";
+		}
+
 		// Kirim via Whatsapp
 		$postData = array(
 			'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
 			'number' => '62'.$this->input->post('phone'),
 			'message' => "*Terima kasih, Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
 			"\r\nKode ID anda : ". $id .
-			"\r\n\r\nTunjukan Kode ID ini dan Kartu Identitas anda saat akan memasuki PT Astra Otoparts Divisi WINTEQ."
+			"\r\nTunjukan Kode ID ini dan Kartu Identitas anda saat akan memasuki PT Astra Otoparts Divisi WINTEQ." .
+			$pesan
 		);
 
 		$ch = curl_init();
@@ -150,6 +157,7 @@ class Beranda extends CI_Controller {
 	public function berhasil($id)
 	{
         $data['id']=$id;
+        $data['visit'] = $this->db->get_where('visit', ['id' => $id])->row_array();
 		$this->load->view('beranda/berhasil',$data);
 	}
 }
