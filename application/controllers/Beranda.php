@@ -71,8 +71,8 @@ class Beranda extends CI_Controller {
 			'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
 			'number' => '62'.$this->input->post('phone'),
 			'message' => "*Terima kasih, Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
-			"\r\nID anda : ". $id .
-			"\r\n\r\nTunjukan ID ini saat anda akan memasuki PT Astra Otoparts Divisi WINTEQ."
+			"\r\nKode ID anda : ". $id .
+			"\r\n\r\nTunjukan Kode ID ini dan Kartu Identitas anda saat akan memasuki PT Astra Otoparts Divisi WINTEQ."
 		);
 
 		$ch = curl_init();

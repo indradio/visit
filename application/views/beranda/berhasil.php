@@ -65,7 +65,7 @@
               <div class="col-md-6 ml-auto mr-auto text-center">
                 <h1 class="title">Terima kasih</h1>
                 <h1 class="title"><b><?= $id; ?></b></h1>
-                <h5 class="description">Tunjukan ID ini saat anda akan memasuki PT Astra Otoparts Divisi WINTEQ.</h5>
+                <h5 class="description">Tunjukan ID dan Kartu Identitas anda saat akan memasuki PT Astra Otoparts Divisi WINTEQ.</h5>
                 <br />
               </div>
             </div>
