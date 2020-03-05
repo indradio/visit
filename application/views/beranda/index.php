@@ -215,7 +215,7 @@
                         <div class="col-md-8">
                           <div class="form-check">
                             <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" id="check" value="" required="true">Saya sudah membaca dengan seksama dan saya sudah memberikan informasi yang benar. </br>Saya siap menerima konsekuensi hukum yang muncul jika data yang saya berikan salah.
+                              <input class="form-check-input" type="checkbox" id="check" value="" required="true">Saya sudah membaca dengan seksama dan saya sudah memberikan informasi yang benar. Saya siap menerima konsekuensi hukum yang muncul jika data yang saya berikan salah.
                               <span class="form-check-sign"></span>
                             </label>
                           </div>
