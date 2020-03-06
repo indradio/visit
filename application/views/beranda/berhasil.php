@@ -66,10 +66,10 @@
                 <h1 class="title">Terima kasih</h1>
                 <h5 class="description">Kode ID Anda</h5>
                 <h1 class="title"><b><?= $id; ?></b></h1>
-                <h5 class="description">Tunjukan ID dan Kartu Identitas anda saat akan memasuki PT Astra Otoparts Divisi WINTEQ.</h5>
-                <h5 class="description">PT Astra Otoparts Divisi WINTEQ berhak untuk </br><b>“MEMBATALKAN/MENUNDA”</b> </br>kunjungan anda.</h5>
+                <h5 class="description">Tunjukan Kode ID dan Kartu Identitas anda saat akan memasuki PT Astra Otoparts Divisi WINTEQ.</h5>
+                <h5 class="description">PT Astra Otoparts Divisi WINTEQ berhak untuk </br><b>“MENUNDA/MEMBATALKAN”</b> </br>kunjungan anda untuk alasan keselamatan.</h5>
                 <?php if ($visit['point1']=='YA' OR $visit['point2']=='YA' OR $visit['point3']== 'YA' OR $visit['point4']== 'YA' OR $visit['point5']== 'YA' OR $visit['point6']== 'YA'){ ?>
-                <h5 class="description">Anda sedang dalam kondisi yang kami tidak dapat memberikan ijin untuk berkunjung saat ini. </br>Silahkan menghubungi PIC WINTEQ yang akan anda temui sebelum melakukan kunjungan.</h5>
+                <h5 class="description">Anda sedang dalam kondisi yang kami <b>tidak dapat memberikan ijin</b> untuk berkunjung saat ini. </br>Silahkan menghubungi PIC WINTEQ yang akan anda temui sebelum melakukan kunjungan.</h5>
                 <?php } ?> 
                 <br />
               </div>
