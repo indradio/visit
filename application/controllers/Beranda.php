@@ -82,7 +82,7 @@ class Beranda extends CI_Controller {
 					'number' => '62'.$this->input->post('phone'),
 					'message' => "*Terima kasih, Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
 					"\r\nKami mohon maaf, Saat ini kami tidak dapat menerima kunjungan anda untuk alasan keselamatan" .
-					"\r\n \r\nKami akan segera menghubungi anda untuk mengatur kembali pertemuan ini."
+					"\r\nKami akan segera menghubungi anda untuk mengatur kembali pertemuan ini."
 				);
 			}else{
 				$postData = array(
