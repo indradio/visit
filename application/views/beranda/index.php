@@ -98,24 +98,275 @@
                   <form role="form" id="contact-form" method="post"  action="<?= base_url('beranda/daftar'); ?>">
                     <div class="card-body">
                       <div class="form-group label-floating">
-                        <label class="control-label">Nama Lengkap*</label>
+                        <label class="control-label">Nama Lengkap <i>(Full Name)</i>*</label>
                         <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Lengkap" required="true" />
                       </div>
                       <div class="form-group label-floating">
-                        <label class="control-label">Gender*</label>
+                        <label class="control-label">Kewarganegaraan <i>(Nationality)</i>*</label>
                         <div class="form-inline form-group">
                           <div class="form-check-radio">
                             <label class="form-check-label">
-                              <input class="form-check-input" type="radio" name="gender" id="gender1" value="Pria" checked required="true"> Pria
+                              <input class="form-check-input" type="radio" name="kewarganegaraan" id="kewarganegaraan1" value="WNI" checked required="true"> WNI / Indonesian Citizens
                               <span class="form-check-sign mr-3"></span>
                             </label>
                           </div>
                           <div class="form-check-radio">
                             <label class="form-check-label">
-                              <input class="form-check-input" type="radio" name="gender" id="gender2" value="Wanita" required="true"> Wanita
+                              <input class="form-check-input" type="radio" name="kewarganegaraan" id="kewarganegaraan2" value="WNA" required="true"> WNA / Foreign Nationals
                               <span class="form-check-sign"></span>
                             </label>
                           </div>
+                        </div>
+                      </div>
+                      <div class="form-group label-floating" id="negara_input" style="display:none;">
+                        <label class="control-label">Asal Negara <i>(Country of Origin)</i></label>
+                        <div class="form-group">
+                        <input type="text" id="negara" name="negara" list="listnegara" class="form-control" placeholder="Country" />
+                          <datalist id="listnegara">
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="Åland Islands">Åland Islands</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Algeria">Algeria</option>
+                            <option value="American Samoa">American Samoa</option>
+                            <option value="Andorra">Andorra</option>
+                            <option value="Angola">Angola</option>
+                            <option value="Anguilla">Anguilla</option>
+                            <option value="Antarctica">Antarctica</option>
+                            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Armenia">Armenia</option>
+                            <option value="Aruba">Aruba</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Azerbaijan">Azerbaijan</option>
+                            <option value="Bahamas">Bahamas</option>
+                            <option value="Bahrain">Bahrain</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Barbados">Barbados</option>
+                            <option value="Belarus">Belarus</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Belize">Belize</option>
+                            <option value="Benin">Benin</option>
+                            <option value="Bermuda">Bermuda</option>
+                            <option value="Bhutan">Bhutan</option>
+                            <option value="Bolivia">Bolivia</option>
+                            <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                            <option value="Botswana">Botswana</option>
+                            <option value="Bouvet Island">Bouvet Island</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                            <option value="Brunei Darussalam">Brunei Darussalam</option>
+                            <option value="Bulgaria">Bulgaria</option>
+                            <option value="Burkina Faso">Burkina Faso</option>
+                            <option value="Burundi">Burundi</option>
+                            <option value="Cambodia">Cambodia</option>
+                            <option value="Cameroon">Cameroon</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Cape Verde">Cape Verde</option>
+                            <option value="Cayman Islands">Cayman Islands</option>
+                            <option value="Central African Republic">Central African Republic</option>
+                            <option value="Chad">Chad</option>
+                            <option value="Chile">Chile</option>
+                            <option value="China">China</option>
+                            <option value="Christmas Island">Christmas Island</option>
+                            <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Comoros">Comoros</option>
+                            <option value="Congo">Congo</option>
+                            <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+                            <option value="Cook Islands">Cook Islands</option>
+                            <option value="Costa Rica">Costa Rica</option>
+                            <option value="Cote D'ivoire">Cote D'ivoire</option>
+                            <option value="Croatia">Croatia</option>
+                            <option value="Cuba">Cuba</option>
+                            <option value="Cyprus">Cyprus</option>
+                            <option value="Czech Republic">Czech Republic</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Djibouti">Djibouti</option>
+                            <option value="Dominica">Dominica</option>
+                            <option value="Dominican Republic">Dominican Republic</option>
+                            <option value="Ecuador">Ecuador</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="El Salvador">El Salvador</option>
+                            <option value="Equatorial Guinea">Equatorial Guinea</option>
+                            <option value="Eritrea">Eritrea</option>
+                            <option value="Estonia">Estonia</option>
+                            <option value="Ethiopia">Ethiopia</option>
+                            <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                            <option value="Faroe Islands">Faroe Islands</option>
+                            <option value="Fiji">Fiji</option>
+                            <option value="Finland">Finland</option>
+                            <option value="France">France</option>
+                            <option value="French Guiana">French Guiana</option>
+                            <option value="French Polynesia">French Polynesia</option>
+                            <option value="French Southern Territories">French Southern Territories</option>
+                            <option value="Gabon">Gabon</option>
+                            <option value="Gambia">Gambia</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Ghana">Ghana</option>
+                            <option value="Gibraltar">Gibraltar</option>
+                            <option value="Greece">Greece</option>
+                            <option value="Greenland">Greenland</option>
+                            <option value="Grenada">Grenada</option>
+                            <option value="Guadeloupe">Guadeloupe</option>
+                            <option value="Guam">Guam</option>
+                            <option value="Guatemala">Guatemala</option>
+                            <option value="Guernsey">Guernsey</option>
+                            <option value="Guinea">Guinea</option>
+                            <option value="Guinea-bissau">Guinea-bissau</option>
+                            <option value="Guyana">Guyana</option>
+                            <option value="Haiti">Haiti</option>
+                            <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+                            <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                            <option value="Honduras">Honduras</option>
+                            <option value="Hong Kong">Hong Kong</option>
+                            <option value="Hungary">Hungary</option>
+                            <option value="Iceland">Iceland</option>
+                            <option value="India">India</option>
+                            <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+                            <option value="Iraq">Iraq</option>
+                            <option value="Ireland">Ireland</option>
+                            <option value="Isle of Man">Isle of Man</option>
+                            <option value="Israel">Israel</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Jamaica">Jamaica</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Jersey">Jersey</option>
+                            <option value="Jordan">Jordan</option>
+                            <option value="Kazakhstan">Kazakhstan</option>
+                            <option value="Kenya">Kenya</option>
+                            <option value="Kiribati">Kiribati</option>
+                            <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                            <option value="Korea, Republic of">Korea, Republic of</option>
+                            <option value="Kuwait">Kuwait</option>
+                            <option value="Kyrgyzstan">Kyrgyzstan</option>
+                            <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                            <option value="Latvia">Latvia</option>
+                            <option value="Lebanon">Lebanon</option>
+                            <option value="Lesotho">Lesotho</option>
+                            <option value="Liberia">Liberia</option>
+                            <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                            <option value="Liechtenstein">Liechtenstein</option>
+                            <option value="Lithuania">Lithuania</option>
+                            <option value="Luxembourg">Luxembourg</option>
+                            <option value="Macao">Macao</option>
+                            <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+                            <option value="Madagascar">Madagascar</option>
+                            <option value="Malawi">Malawi</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="Mali">Mali</option>
+                            <option value="Malta">Malta</option>
+                            <option value="Marshall Islands">Marshall Islands</option>
+                            <option value="Martinique">Martinique</option>
+                            <option value="Mauritania">Mauritania</option>
+                            <option value="Mauritius">Mauritius</option>
+                            <option value="Mayotte">Mayotte</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+                            <option value="Moldova, Republic of">Moldova, Republic of</option>
+                            <option value="Monaco">Monaco</option>
+                            <option value="Mongolia">Mongolia</option>
+                            <option value="Montenegro">Montenegro</option>
+                            <option value="Montserrat">Montserrat</option>
+                            <option value="Morocco">Morocco</option>
+                            <option value="Mozambique">Mozambique</option>
+                            <option value="Myanmar">Myanmar</option>
+                            <option value="Namibia">Namibia</option>
+                            <option value="Nauru">Nauru</option>
+                            <option value="Nepal">Nepal</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="Netherlands Antilles">Netherlands Antilles</option>
+                            <option value="New Caledonia">New Caledonia</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Nicaragua">Nicaragua</option>
+                            <option value="Niger">Niger</option>
+                            <option value="Nigeria">Nigeria</option>
+                            <option value="Niue">Niue</option>
+                            <option value="Norfolk Island">Norfolk Island</option>
+                            <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                            <option value="Norway">Norway</option>
+                            <option value="Oman">Oman</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Palau">Palau</option>
+                            <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+                            <option value="Panama">Panama</option>
+                            <option value="Papua New Guinea">Papua New Guinea</option>
+                            <option value="Paraguay">Paraguay</option>
+                            <option value="Peru">Peru</option>
+                            <option value="Philippines">Philippines</option>
+                            <option value="Pitcairn">Pitcairn</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Puerto Rico">Puerto Rico</option>
+                            <option value="Qatar">Qatar</option>
+                            <option value="Reunion">Reunion</option>
+                            <option value="Romania">Romania</option>
+                            <option value="Russian Federation">Russian Federation</option>
+                            <option value="Rwanda">Rwanda</option>
+                            <option value="Saint Helena">Saint Helena</option>
+                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                            <option value="Saint Lucia">Saint Lucia</option>
+                            <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                            <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+                            <option value="Samoa">Samoa</option>
+                            <option value="San Marino">San Marino</option>
+                            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="Senegal">Senegal</option>
+                            <option value="Serbia">Serbia</option>
+                            <option value="Seychelles">Seychelles</option>
+                            <option value="Sierra Leone">Sierra Leone</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Slovakia">Slovakia</option>
+                            <option value="Slovenia">Slovenia</option>
+                            <option value="Solomon Islands">Solomon Islands</option>
+                            <option value="Somalia">Somalia</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Sri Lanka">Sri Lanka</option>
+                            <option value="Sudan">Sudan</option>
+                            <option value="Suriname">Suriname</option>
+                            <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+                            <option value="Swaziland">Swaziland</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Switzerland">Switzerland</option>
+                            <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                            <option value="Taiwan, Province of China">Taiwan, Province of China</option>
+                            <option value="Tajikistan">Tajikistan</option>
+                            <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                            <option value="Thailand">Thailand</option>
+                            <option value="Timor-leste">Timor-leste</option>
+                            <option value="Togo">Togo</option>
+                            <option value="Tokelau">Tokelau</option>
+                            <option value="Tonga">Tonga</option>
+                            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                            <option value="Tunisia">Tunisia</option>
+                            <option value="Turkey">Turkey</option>
+                            <option value="Turkmenistan">Turkmenistan</option>
+                            <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                            <option value="Tuvalu">Tuvalu</option>
+                            <option value="Uganda">Uganda</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="United Arab Emirates">United Arab Emirates</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="United States">United States</option>
+                            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                            <option value="Uruguay">Uruguay</option>
+                            <option value="Uzbekistan">Uzbekistan</option>
+                            <option value="Vanuatu">Vanuatu</option>
+                            <option value="Venezuela">Venezuela</option>
+                            <option value="Viet Nam">Viet Nam</option>
+                            <option value="Virgin Islands, British">Virgin Islands, British</option>
+                            <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                            <option value="Wallis and Futuna">Wallis and Futuna</option>
+                            <option value="Western Sahara">Western Sahara</option>
+                            <option value="Yemen">Yemen</option>
+                            <option value="Zambia">Zambia</option>
+                            <option value="Zimbabwe">Zimbabwe</option>
+                          </datalist>
                         </div>
                       </div>
                       <div class="form-group label-floating">
@@ -135,11 +386,11 @@
                       <label class="text-info"><span><i class="fa fa-check-circle-o" aria-hidden="true" data-toggle="popover" data-placement="top" title="Notifikasi via WhatsApp" data-content="Kami menggunakan format '+62' sebagai pengganti '0' (NOL) diawal, kemudian silahkan diikuti nomor selanjutnya tanpa spasi/pemisah, agar kami bisa mengirimkan notifikasi melalui whatsapp kepada anda."></i> Format 62813XXXXXXX </span></label>
                       </div>
                       <div class="form-group label-floating">
-                        <label class="control-label">Perusahaan*</label>
+                        <label class="control-label">Perusahaan <i>(Company)</i>*</label>
                         <input type="text" id="perusahaan" name="perusahaan" class="form-control" placeholder="Perusahaan" required="true" />
                       </div>
                       <div class="form-group label-floating">
-                        <label class="control-label">Waktu Kunjungan*</label>
+                        <label class="control-label">Waktu Kunjungan <i>(Date of Visit)</i>*</label>
                         <div class="input-group date">
                           <input type="text" id="waktu_kunjungan" name="waktu_kunjungan" class="form-control datetimepicker" placeholder="Pilih Tanggal & Jam" required="true" />
                           <div class="input-group-append">
@@ -150,73 +401,88 @@
                         </div>
                       </div>
                       <div class="form-group label-floating">
-                        <label class="control-label">Pihak yang dituju*</label>
+                        <label class="control-label">Pihak yang dituju <i>(People Who Addressed)</i>*</label>
                         <input type="text" id="pic" name="pic" class="form-control" placeholder="Nama pihak yg dituju" required="true" />
                       </div>
                       <div class="form-group label-floating">
-                        <label class="control-label">Keperluan*</label>
+                        <label class="control-label">Keperluan <i>(The purpose of the visit)</i>*</label>
                         <textarea class="form-control border-input" id="keperluan" name="keperluan" placeholder="Jelaskan keperluan anda." rows="3" required="true"></textarea>
                       </div>
                       <div class="form-group label-floating">
                         <label class="control-label">Silahkan <b>centang</b> jika sesuai dengan kondisi anda.
+                        <label class="control-label"><i>Please <b>Check</b> if according to your condition.</i>
                       </div>
                       <div class="form-group label-floating">
                         <div class="form-check">
                           <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" id="point1" name="point1" value="YA">Apakah dalam 14 hari terakhir anda memiliki riwayat perjalanan ke Cina atau negara/wilayah terjangkit virus corona?
+                            <input class="form-check-input" type="checkbox" id="point1" name="point1" value="YA">
                             <span class="form-check-sign"></span>
+                            <b>Apakah dalam 14 hari terakhir anda memiliki riwayat perjalanan ke Cina atau negara/wilayah terjangkit virus corona?</b>
+                            </br><i>Have you had a history of travel to China or the country / region affected by the corona virus in the past 14 days?</i>
                           </label>
                         </div>
                       </div>
                       <div class="form-group label-floating">
                         <div class="form-check">
                           <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" id="point2" name="point2" value="YA">Apakah dalam 14 hari terakhir anda pernah melakukan interaksi dengan Warga Negara Asing dari negara/wilayah terjangkit virus corona?
+                            <input class="form-check-input" type="checkbox" id="point2" name="point2" value="YA">
                             <span class="form-check-sign"></span>
+                            <b>Apakah dalam 14 hari terakhir anda pernah melakukan interaksi dengan Warga Negara Asing dari negara/wilayah terjangkit virus corona?</b>
+                            </br><i>Have you had an interacted with Foreigners from countries / regions affected by the corona virus?</i>
                           </label>
                         </div>
                       </div>
                       <div class="form-group label-floating">
                         <div class="form-check">
                           <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" id="point3" name="point3" value="YA">Apakah anda pernah melakukan interaksi dengan keluarga/kerabat yang menjadi suspect bahkan positif terjangkit virus corona?
+                            <input class="form-check-input" type="checkbox" id="point3" name="point3" value="YA">
                             <span class="form-check-sign"></span>
+                            <b>Apakah anda pernah melakukan interaksi dengan keluarga/kerabat yang menjadi suspect bahkan positif terjangkit virus corona?</b>
+                            </br><i>Have you had an interactedwith family / relatives who have been suspected or even positively infected by the corona virus?</i>
                           </label>
                         </div>
                       </div>
                       <div class="form-group label-floating">
                         <div class="form-check">
                           <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" id="point4" name="point4" value="YA">Apakah dalam 3 hari terakhir anda mengalami demam dengan suhu tubuh > 38°C?
+                            <input class="form-check-input" type="checkbox" id="point4" name="point4" value="YA">
                             <span class="form-check-sign"></span>
+                            <b>Apakah dalam 3 hari terakhir anda mengalami demam dengan suhu tubuh > 38°C?</b>
+                            </br><i>Whether in the last 3 days you have a fever with a body temperature > 38°C?</i>
                           </label>
                         </div>
                       </div>
                       <div class="form-group label-floating">
                         <div class="form-check">
                           <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" id="point5" name="point5" value="YA">Apakah saat ini anda sedang batuk/pilek/nyeri tenggorokan?
+                            <input class="form-check-input" type="checkbox" id="point5" name="point5" value="YA">
                             <span class="form-check-sign"></span>
+                            <b>Apakah saat ini anda sedang batuk/pilek/nyeri tenggorokan?</b>
+                            </br><i>Are you currently coughing / runny nose / sore throat?</i>
                           </label>
                         </div>
                       </div>
                       <div class="form-group label-floating">
                         <div class="form-check">
                           <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" id="point6" name="point6" value="YA">Apakah saat ini anda sedang pneumonia (sesak nafas) ringan hingga berat?
+                            <input class="form-check-input" type="checkbox" id="point6" name="point6" value="YA">
                             <span class="form-check-sign"></span>
+                            <b>Apakah saat ini anda sedang pneumonia (sesak nafas) ringan hingga berat?</b>
+                            </br><i>Are you currently having a pneumonia (shortness of breath)?</i>
                           </label>
                         </div>
                       </div>
                       <div class="form-group label-floating">
-                        <label class="control-label"><small>* Wajib diisi</label>
+                        <label class="control-label"><small>* Wajib diisi <i>(Required)</i></label>
                       </div>
                       <div class="row">
                         <div class="col-md-8">
                           <div class="form-check">
                             <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" id="check" value="" required="true">Saya sudah membaca dengan seksama dan saya sudah memberikan informasi yang benar. Saya siap menerima konsekuensi hukum yang muncul jika data yang saya berikan salah.
+                              <input class="form-check-input" type="checkbox" id="check" value="" required="true">
                               <span class="form-check-sign"></span>
+                              Saya sudah membaca dengan seksama dan saya sudah memberikan informasi yang benar. Saya siap menerima konsekuensi hukum yang muncul jika data yang saya berikan salah.
+                              <br><i>I have read carefully and I have given correct information. I am ready to accept the legal consequences that arise if the data I provide is wrong.</i>
                             </label>
                           </div>
                         </div>
@@ -319,6 +585,21 @@
           }
         });
 
+        $('#kewarganegaraan1').change(function() {
+            var kewarganegaraan1 = $('#kewarganegaraan1').val();
+            if (kewarganegaraan1 === "WNI") {
+                document.getElementById("negara_input").style.display = "none";
+                $('#negara').prop('required', false);
+            } 
+        });
+
+        $('#kewarganegaraan2').change(function() {
+            var kewarganegaraan2 = $('#kewarganegaraan2').val();
+            if (kewarganegaraan2 === "WNA") {
+                document.getElementById("negara_input").style.display = "block";
+                $('#negara').prop('required', true);
+            } 
+        });
       // Javascript method's body can be found in assets/js/core/partials/_demo-object.js
       demo.initContactUsMap2();
     });

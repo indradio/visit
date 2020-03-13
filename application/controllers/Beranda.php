@@ -45,11 +45,19 @@ class Beranda extends CI_Controller {
 			$point6 = 'TIDAK';
 		}
 
+		if ($this->input->post('kewarganegaraan')=='WNI'){
+			$negara = 'Indonesia';
+		}else{
+			$negara = $this->input->post('negara');
+		}
+
+
 		$data = [
 			'id' => $id,
 			'tanggal' => date('Y-m-d H:i:s'),
 			'nama' => $this->input->post('nama'),
-			'gender' => $this->input->post('gender'),
+			'warganegara' => $this->input->post('kewarganegaraan'),
+			'negara' => $negara,
 			'identitas' => $this->input->post('identitas'),
 			'phone' => '62'.$this->input->post('phone'),
 			'waktu_kunjungan' => $waktu_kunjungan,
@@ -66,21 +74,37 @@ class Beranda extends CI_Controller {
 		];
 		$this->db->insert('visit', $data);
 
-		if ($point1=='YA' OR $point2=='YA' OR $point3=='YA' OR $point4=='YA' OR $point5=='YA' OR $point6=='YA'){
-			$pesan = "\r\n \r\nAnda dalam kondisi yang kami tidak dapat memberikan ijin untuk berkunjung saat ini. Silahkan menghubungi PIC WINTEQ yang akan anda temui sebelum melakukan kunjungan.";
-		}else{
-			$pesan = "\r\n \r\nPT Astra Otoparts Divisi WINTEQ berhak untuk *“MEMBATALKAN/MENUNDA”* kunjungan anda untuk alasan keselamatan.";
-		}
-
 		// Kirim via Whatsapp
-		$postData = array(
-			'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
-			'number' => '62'.$this->input->post('phone'),
-			'message' => "*Terima kasih, Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
-			"\r\nKode ID anda : ". $id .
-			"\r\nTunjukan Kode ID ini dan Kartu Identitas anda saat akan memasuki PT Astra Otoparts Divisi WINTEQ." .
-			$pesan
-		);
+		if ($this->input->post('kewarganegaraan')=='WNI'){
+			if ($point1=='YA' OR $point2=='YA' OR $point3=='YA' OR $point4=='YA' OR $point5=='YA' OR $point6=='YA'){
+				$postData = array(
+					'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
+					'number' => '62'.$this->input->post('phone'),
+					'message' => "*Terima kasih, Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
+					"\r\nKami mohon maaf, Saat ini kami tidak dapat menerima kunjungan anda untuk alasan keselamatan" .
+					"\r\n \r\nKami akan segera menghubungi anda untuk mengatur kembali pertemuan ini."
+				);
+			}else{
+				$postData = array(
+					'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
+					'number' => '62'.$this->input->post('phone'),
+					'message' => "*Terima kasih, Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
+					"\r\nKode ID anda : ". $id .
+					"\r\nTunjukan Kode ID ini dan Kartu Identitas anda saat akan memasuki PT Astra Otoparts Divisi WINTEQ." .
+					"\r\nPT Astra Otoparts Divisi WINTEQ berhak untuk *“MEMBATALKAN/MENUNDA”* kunjungan anda untuk alasan keselamatan." .
+					"\r\n \r\n1. Tamu yang akan berkunjung wajib menggunakan Masker selama kunjungan" .
+					"\r\n2. Tamu yang akan berkunjung wajib mematuhi segala peraturan maupun himbauan selama kunjungan"
+				);
+			}
+		}else{
+			$postData = array(
+				'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
+				'number' => '62'.$this->input->post('phone'),
+				'message' => "*Thank you for filling out THE HEALTH DECLARATION FORM*" .
+				"\r\nHello Mr/Mrs ".$this->input->post('nama').", We apologize that we could not accept your visit in the near future." .
+				"\r\nWe will contact you to arrange another meeting soon."
+			);
+		}
 
 		$ch = curl_init();
 
