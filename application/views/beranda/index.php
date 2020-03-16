@@ -73,9 +73,9 @@
         <div class="row">
           <div class="col-md-12 ml-auto mr-auto">
             <div class="card card-contact no-transition">
-              <h3 class="card-title text-center">Pencegahan Penyebaran Virus Corona</h3>
-              <small class="text-center"><i>We apologize not to provide this form in english currently.<br>
-              Please kindly ask your Indonesian colleague or WINTEQ person in charge for assistance</i></small>
+              <h3 class="card-title text-center">Pencegahan Penyebaran Virus Corona </br> <i>Prevention of Corona Virus Spread</i></h3>
+              <small class="text-center">Harap mengisi form berikut H-2 sebelum anda melakukan kunjungan.<br>
+              <i>Please fill in the following form 2 days before you make a visit.</i></small>
               <div class="row">
                 <div class="col-md-4 ml-auto">
                   <div class="card-body">
@@ -402,7 +402,14 @@
                       </div>
                       <div class="form-group label-floating">
                         <label class="control-label">Pihak yang dituju <i>(People Who Addressed)</i>*</label>
-                        <input type="text" id="pic" name="pic" class="form-control" placeholder="Nama pihak yg dituju" required="true" />
+                        <input type="text" id="pic" name="pic" class="form-control" list="listkaryawan" placeholder="Cari nama pihak yg dituju" required="true" />
+                        <datalist id="listkaryawan">
+                        <?php $karyawan = $this->db->get('karyawan')->result_array();
+                        foreach ($karyawan as $k) {
+                          echo '<option value="'.$k['nama'].'">'.$k['nama'].'</option>';
+                        }
+                        ?>
+                        </datalist>
                       </div>
                       <div class="form-group label-floating">
                         <label class="control-label">Keperluan <i>(The purpose of the visit)</i>*</label>

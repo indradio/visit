@@ -39,28 +39,8 @@
       <div class="collapse navbar-collapse" data-nav-image="<?= base_url(); ?>assets/img/blurred-image-1.jpg" data-color="orange">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url(); ?>#overviews">
-              Overview
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?= base_url(); ?>#fasilitas">
-              Fasilitas 
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?= base_url(); ?>#programs">
-              Program 
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?= base_url(); ?>#trainers">
-              Trainer 
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-round btn-primary" href="<?= base_url(); ?>#contactus">
-              <i class="nc-icon nc-send"></i> DAFTAR
+            <a class="btn btn-round btn-primary" href="<?= base_url(); ?>">
+              <i class="nc-icon nc-send"></i> FORM DEKLARASI KESEHATAN
             </a>
           </li>
         </ul>
@@ -68,12 +48,12 @@
     </div>
   </nav>
   <!-- End Navbar -->
-  <div class="section-space"></div>
+  <!-- <div class="section-space"></div> -->
   <div class="section section-header cd-section" id="headers">
     <!--     *********     HEADER 3      *********      -->
     <div class="header-4">
       <div class="header-wrapper">
-        <div class="page-header header-video">
+        <div class="page-header">
           <div class="filter filter-danger"></div>
           <!-- We show the video image placeholder instead of the video for small devices  -->
           <div class="page-header" style="background-image: url('<?= base_url(); ?>assets/img/cover.jpg')"></div>
@@ -81,34 +61,16 @@
           <div class="content-center">
             <div class="row">
               <div class="col-md-6 ml-auto mr-auto text-center">
-                <h1 class="title">MAAF</h1>
-                <h5 class="description">Email yang anda gunakan sudah terdaftar.</h5>
-                <br />
-              </div>
-              <div class="col-md-12 ml-auto mr-auto"></div>
-              <div class="col-md-4 ml-auto mr-auto">
-                <div class="card card-raised card-form-horizontal no-transition">
-                  <div class="card-body">
-                    <form method="" action="<?= base_url(); ?>pretest">
-                      <div class="row">
-                        <div class="col-md-6">
-                          
-                          <a href="<?= base_url(); ?>" class="btn btn-info btn-block">KEMBALI</a>
-</p>
-                        </div>
-                        <div class="col-md-6">
-                          <button type="submit" class="btn btn-danger btn-block">LOGIN</button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
+                <h1 class="title">MAAF <i>(SORRY)</i></h1>
+                <h5 class="description">Tanggal kunjungan anda tidak boleh lebih dari 2 hari sebelum anda melakukan kunjungan.</h5>
+                <h5 class="description"><i>Date of your visit should not take more than 2 days before your visit.</i></h5>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
     <!--     *********    END HEADER 3      *********      -->
   <footer class="footer footer-black  footer-white ">
     <div class="container">
