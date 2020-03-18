@@ -137,18 +137,26 @@ class Beranda extends CI_Controller {
 							'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
 							'number' => $pic['phone'],
 							'message' => "*Tamu Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
-							"\r\n \r\nMohon maaf, Tamu anda masuk dalam kategori *DILARANG* berkunjung demi alasan keselamatan" .
-							"\r\nHarap segera hubungi kembali untuk mengatur pertemuan menggunakan metode lainnya atau segera mengajukan penggunaan RUANG ISOLASI.".
-							"\r\nInfo lebih lengkap dapet menghubungi komite P2K3L."
+								"\r\n \r\n Nama : *" . $this->input->post('nama') . "*" .
+								"\r\nPerusahaan : *" . $this->input->post('perusahaan') . "*" .
+								"\r\nKeperluan : *" . $this->input->post('keperluan') . "*" .
+								"\r\nRencana Berkunjung : *" . date('d-m-Y H:i', strtotime($this->input->post('waktu_kunjungan'))) . "*" .
+								"\r\n \r\nMohon maaf, Tamu anda masuk dalam kategori *DILARANG* berkunjung demi alasan keselamatan" .
+								"\r\nHarap segera hubungi kembali untuk mengatur pertemuan menggunakan metode lainnya atau segera mengajukan penggunaan RUANG ISOLASI.".
+								"\r\nInfo lebih lengkap dapet menghubungi komite P2K3L."
 						);
 					}else{
 						$postData = array(
 							'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
 							'number' => $pic['phone'],
 							'message' => "*Tamu Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
-							"\r\n \r\nTamu anda masuk dalam kategori *DITERIMA* berkunjung." .
-							"\r\nTetap jaga kesehatan kamu dengan mematuhi himbauan dan kebijakan terkait pencegahan penyebaran covid-19.".
-							"\r\nInfo lebih lengkap dapet menghubungi komite P2K3L."
+								"\r\n \r\n Nama : *" . $this->input->post('nama') . "*" .
+								"\r\nPerusahaan : *" . $this->input->post('perusahaan') . "*" .
+								"\r\nKeperluan : *" . $this->input->post('keperluan') . "*" .
+								"\r\nRencana Berkunjung : *" . date('d-m-Y H:i', strtotime($this->input->post('waktu_kunjungan'))) . "*" .
+								"\r\n \r\nTamu anda masuk dalam kategori *DITERIMA* berkunjung." .
+								"\r\nTetap jaga kesehatan kamu dengan mematuhi himbauan dan kebijakan terkait pencegahan penyebaran covid-19.".
+								"\r\nInfo lebih lengkap dapet menghubungi komite P2K3L."
 						);
 					}
 				}else{
@@ -156,6 +164,10 @@ class Beranda extends CI_Controller {
 						'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
 						'number' => $pic['phone'],
 						'message' => "*Tamu Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
+							"\r\n \r\n Nama : *" . $this->input->post('nama') . "*" .
+							"\r\nPerusahaan : *" . $this->input->post('perusahaan') . "*" .
+							"\r\nKeperluan : *" . $this->input->post('keperluan') . "*" .
+							"\r\nRencana Berkunjung : *" . date('d-m-Y H:i', strtotime($this->input->post('waktu_kunjungan'))) . "*" .
 							"\r\n \r\nMohon maaf, Tamu anda masuk dalam kategori *DILARANG* berkunjung demi alasan keselamatan" .
 							"\r\nHarap segera hubungi kembali untuk mengatur pertemuan menggunakan metode lainnya atau segera mengajukan penggunaan RUANG ISOLASI.".
 							"\r\nInfo lebih lengkap dapet menghubungi komite P2K3L."
