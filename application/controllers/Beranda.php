@@ -137,7 +137,7 @@ class Beranda extends CI_Controller {
 							'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
 							'number' => $pic['phone'],
 							'message' => "*Tamu Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
-								"\r\n \r\n Nama : *" . $this->input->post('nama') . "*" .
+								"\r\n \r\nNama : *" . $this->input->post('nama') . "*" .
 								"\r\nPerusahaan : *" . $this->input->post('perusahaan') . "*" .
 								"\r\nKeperluan : *" . $this->input->post('keperluan') . "*" .
 								"\r\nRencana Berkunjung : *" . date('d-m-Y H:i', strtotime($this->input->post('waktu_kunjungan'))) . "*" .
@@ -150,7 +150,7 @@ class Beranda extends CI_Controller {
 							'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
 							'number' => $pic['phone'],
 							'message' => "*Tamu Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
-								"\r\n \r\n Nama : *" . $this->input->post('nama') . "*" .
+								"\r\n \r\nNama : *" . $this->input->post('nama') . "*" .
 								"\r\nPerusahaan : *" . $this->input->post('perusahaan') . "*" .
 								"\r\nKeperluan : *" . $this->input->post('keperluan') . "*" .
 								"\r\nRencana Berkunjung : *" . date('d-m-Y H:i', strtotime($this->input->post('waktu_kunjungan'))) . "*" .
@@ -164,7 +164,7 @@ class Beranda extends CI_Controller {
 						'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
 						'number' => $pic['phone'],
 						'message' => "*Tamu Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
-							"\r\n \r\n Nama : *" . $this->input->post('nama') . "*" .
+							"\r\n \r\nNama : *" . $this->input->post('nama') . "*" .
 							"\r\nPerusahaan : *" . $this->input->post('perusahaan') . "*" .
 							"\r\nKeperluan : *" . $this->input->post('keperluan') . "*" .
 							"\r\nRencana Berkunjung : *" . date('d-m-Y H:i', strtotime($this->input->post('waktu_kunjungan'))) . "*" .
