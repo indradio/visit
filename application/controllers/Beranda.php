@@ -9,12 +9,12 @@ class Beranda extends CI_Controller {
 	}
 	public function daftar()
 	{
+		date_default_timezone_set('asia/jakarta');
 		$sekarang = strtotime(date('Y-m-d'));
-		$tempo = strtotime(date('Y-m-d', strtotime('+2 days', strtotime(date('Y-m-d')))));
+		$tempo = strtotime(date('Y-m-d', strtotime('+12 hours', strtotime(date('Y-m-d')))));
 		$berkunjung = strtotime(date('Y-m-d', strtotime($this->input->post('waktu_kunjungan'))));
 		if ($berkunjung <= $tempo AND $berkunjung >= $sekarang)
 		{
-			date_default_timezone_set('asia/jakarta');
 			$waktu_kunjungan = date('Y-m-d H:i', strtotime($this->input->post('waktu_kunjungan')));
 			$this->load->helper('string');
 			$id = random_string('alnum',8);
@@ -55,7 +55,6 @@ class Beranda extends CI_Controller {
 			}else{
 				$negara = $this->input->post('negara');
 			}
-	
 	
 			$data = [
 				'id' => $id,
@@ -222,4 +221,20 @@ class Beranda extends CI_Controller {
 	{
 		$this->load->view('beranda/gagal');
 	}
+
+	public function json_data()
+    {
+        date_default_timezone_set('asia/jakarta');
+
+		$this->db->where('is_active', '1');
+		$this->db->where('status', '1');
+        $karyawan = $this->db->get('karyawan')->result_array();
+        $output = array();
+        foreach ($karyawan as $row) {
+			$output[] = $row['nama'];
+        }
+
+		//output to json format
+        echo json_encode($output);
+    }
 }
