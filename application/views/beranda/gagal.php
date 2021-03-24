@@ -62,8 +62,8 @@
             <div class="row">
               <div class="col-md-6 ml-auto mr-auto text-center">
                 <h1 class="title">MAAF <i>(SORRY)</i></h1>
-                <h5 class="description">Waktu kunjungan anda tidak boleh lebih dari 12 Jam sebelum anda melakukan kunjungan.</h5>
-                <h5 class="description"><i>Time of your visit should not take more than 12 hours before your visit.</i></h5>
+                <h5 class="description">Waktu pengisian form ini adalah 12 jam sebelum waktu anda melakukan kunjungan.</h5>
+                <h5 class="description"><i>This form is available within 12 hours prior your time of visit.</i></h5>
               </div>
             </div>
           </div>
