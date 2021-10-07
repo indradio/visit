@@ -567,6 +567,7 @@ input[type=submit] {
                             </span>
                           </div>
                         </div>
+                        <label class="control-label"><small>*<i>Surat hasil Test ANTIGEN hanya berlaku maksimal 2 Hari.</i></label>
                       </div>
                       <div class="form-group label-floating">
                         <label class="control-label"><small>* Wajib diisi <i>(Required)</i></label>
