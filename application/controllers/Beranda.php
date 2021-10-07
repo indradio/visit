@@ -18,8 +18,14 @@ class Beranda extends CI_Controller {
 		$berkunjung = strtotime(date('Y-m-d', strtotime($this->input->post('waktu_kunjungan'))));
 		if ($berkunjung <= $tempo AND $berkunjung >= $sekarang)
 		{
-			$waktu_kunjungan = date('Y-m-d H:i', strtotime($this->input->post('waktu_kunjungan')));
 			$tgl_antigen = date('Y-m-d', strtotime($this->input->post('tgl_antigen')));
+			$ex_antigen = strtotime(date('Y-m-d', strtotime('+1 days', strtotime($this->input->post('tgl_antigen')))));
+			$waktu_kunjungan = date('Y-m-d H:i', strtotime($this->input->post('waktu_kunjungan')));
+			
+			if ($berkunjung > $ex_antigen){
+				redirect('beranda/gagal_antigen/');
+			}
+
 			$this->load->helper('string');
 			$id = random_string('alnum',8);
 	
@@ -271,6 +277,11 @@ class Beranda extends CI_Controller {
 	public function gagal()
 	{
 		$this->load->view('beranda/gagal');
+	}
+
+	public function gagal_antigen()
+	{
+		$this->load->view('beranda/gagal_antigen');
 	}
 
 	public function json_data()
