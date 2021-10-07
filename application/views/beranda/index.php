@@ -475,6 +475,35 @@ input[type=submit] {
                         <textarea class="form-control border-input" id="keperluan" name="keperluan" placeholder="Jelaskan keperluan anda." rows="3" required="true"></textarea>
                       </div>
                       <div class="form-group label-floating">
+                        <label class="control-label"><b>Dapat menunjukan sertifikat vaksin ke -1/ke -2 atau surat hasil test antigen negatif</b>
+                        </br><i>Can show vaccine certificate 1st/2nd or Antigen Test Result</i></label>
+                        <div class="form-inline form-group">
+                          <div class="form-check-radio">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="radio" name="sertifikat" id="vaksin" value="VAKSIN" required="true"> VAKSIN KE -1/KE -2
+                              <span class="form-check-sign mr-3"></span>
+                            </label>
+                          </div>
+                          <div class="form-check-radio">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="radio" name="sertifikat" id="antigen" value="ANTIGEN" required="true"> ANTIGEN
+                              <span class="form-check-sign"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group label-floating" id="antigen_input" style="display:none;">
+                        <label class="control-label">Tanggal Test Antigen <i>(Date of Antigen test)</i>*</label>
+                        <div class="input-group date">
+                          <input type="text" id="tgl_antigen" name="tgl_antigen" class="form-control datepicker" placeholder="Pilih Tanggal" required="true" />
+                          <div class="input-group-append">
+                            <span class="input-group-text">
+                              <span class="glyphicon glyphicon-calendar"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group label-floating">
                         <label class="control-label">Silahkan <b>centang</b> jika sesuai dengan kondisi anda.
                         <label class="control-label"><i>Please <b>Check</b> if according to your condition.</i>
                       </div>
@@ -654,6 +683,21 @@ input[type=submit] {
           }
         });
 
+        $('.datepicker').datetimepicker({
+        format: 'DD-MM-YYYY',
+        icons: {
+            time: "fa fa-clock-o",
+            date: "fa fa-calendar",
+            up: "fa fa-chevron-up",
+            down: "fa fa-chevron-down",
+            previous: 'fa fa-chevron-left',
+            next: 'fa fa-chevron-right',
+            today: 'fa fa-screenshot',
+            clear: 'fa fa-trash',
+            close: 'fa fa-remove'
+          }
+        });
+
         $('#kewarganegaraan1').change(function() {
             var kewarganegaraan1 = $('#kewarganegaraan1').val();
             if (kewarganegaraan1 === "WNI") {
@@ -667,6 +711,22 @@ input[type=submit] {
             if (kewarganegaraan2 === "WNA") {
                 document.getElementById("negara_input").style.display = "block";
                 $('#negara').prop('required', true);
+            } 
+        });
+        
+        $('#vaksin').change(function() {
+            var vaksin = $('#vaksin').val();
+            if (vaksin === "VAKSIN") {
+                document.getElementById("antigen_input").style.display = "none";
+                $('#tgl_antigen').prop('required', false);
+            } 
+        });
+
+        $('#antigen').change(function() {
+            var antigen = $('#antigen').val();
+            if (antigen === "ANTIGEN") {
+                document.getElementById("antigen_input").style.display = "block";
+                $('#tgl_antigen').prop('required', true);
             } 
         });
       // Javascript method's body can be found in assets/js/core/partials/_demo-object.js

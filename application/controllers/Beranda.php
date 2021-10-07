@@ -16,6 +16,7 @@ class Beranda extends CI_Controller {
 		if ($berkunjung <= $tempo AND $berkunjung >= $sekarang)
 		{
 			$waktu_kunjungan = date('Y-m-d H:i', strtotime($this->input->post('waktu_kunjungan')));
+			$tgl_antigen = date('Y-m-d', strtotime($this->input->post('tgl_antigen')));
 			$this->load->helper('string');
 			$id = random_string('alnum',8);
 	
@@ -74,6 +75,8 @@ class Beranda extends CI_Controller {
 				'point4' => $point4,
 				'point5' => $point5,
 				'point6' => $point6,
+				'sertifikat' =>  $this->input->post('sertifikat'),
+				'antigen_at' =>  $tgl_antigen,
 				'status' => '1'
 			];
 			$this->db->insert('visit', $data);
@@ -85,7 +88,7 @@ class Beranda extends CI_Controller {
 						'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
 						'number' => '62'.$this->input->post('phone'),
 						'message' => "*Terima kasih, Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
-						"\r\nKami mohon maaf, Saat ini kami tidak dapat menerima kunjungan anda untuk alasan keselamatan" .
+						"\r\nKami mohon maaf, Saat ini kami tidak dapat menerima kunjungan anda untuk alasan kesehatan" .
 						"\r\nKami akan segera menghubungi anda untuk mengatur kembali pertemuan ini."
 					);
 				}else{
@@ -94,7 +97,7 @@ class Beranda extends CI_Controller {
 						'number' => '62'.$this->input->post('phone'),
 						'message' => "*Terima kasih, Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
 						"\r\nKode ID anda : ". $id .
-						"\r\nTunjukan Kode ID ini dan Kartu Identitas anda saat akan memasuki PT Astra Otoparts Divisi WINTEQ." .
+						"\r\nTunjukan Kartu Identitas dan Sertifikat Vaksin/Surat Hasil Antigen anda saat akan memasuki PT Astra Otoparts Divisi WINTEQ." .
 						"\r\nPT Astra Otoparts Divisi WINTEQ berhak untuk *“MEMBATALKAN/MENUNDA”* kunjungan anda untuk alasan keselamatan." .
 						"\r\n \r\n1. Tamu yang akan berkunjung wajib menggunakan Masker selama kunjungan" .
 						"\r\n2. Tamu yang akan berkunjung wajib mematuhi segala peraturan maupun himbauan selama kunjungan"
