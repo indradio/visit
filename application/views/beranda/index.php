@@ -545,7 +545,7 @@ input[type=submit] {
                         <div class="form-inline form-group">
                           <div class="form-check-radio">
                             <label class="form-check-label">
-                              <input class="form-check-input" type="radio" name="sertifikat" id="vaksin" value="VAKSIN" required="true"> VAKSIN KE -1/KE -2
+                              <input class="form-check-input" type="radio" name="sertifikat" id="vaksin" value="VAKSIN" required="true"> SERTIFIKAT VAKSIN
                               <span class="form-check-sign mr-3"></span>
                             </label>
                           </div>
