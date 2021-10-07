@@ -475,35 +475,6 @@ input[type=submit] {
                         <textarea class="form-control border-input" id="keperluan" name="keperluan" placeholder="Jelaskan keperluan anda." rows="3" required="true"></textarea>
                       </div>
                       <div class="form-group label-floating">
-                        <label class="control-label"><b>Dapat menunjukan sertifikat vaksin ke -1/ke -2 atau surat hasil test antigen negatif</b>
-                        </br><i>Can show vaccine certificate 1st/2nd or Antigen Test Result</i></label>
-                        <div class="form-inline form-group">
-                          <div class="form-check-radio">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="radio" name="sertifikat" id="vaksin" value="VAKSIN" required="true"> VAKSIN KE -1/KE -2
-                              <span class="form-check-sign mr-3"></span>
-                            </label>
-                          </div>
-                          <div class="form-check-radio">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="radio" name="sertifikat" id="antigen" value="ANTIGEN" required="true"> ANTIGEN
-                              <span class="form-check-sign"></span>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group label-floating" id="antigen_input" style="display:none;">
-                        <label class="control-label">Tanggal Test Antigen <i>(Date of Antigen test)</i>*</label>
-                        <div class="input-group date">
-                          <input type="text" id="tgl_antigen" name="tgl_antigen" class="form-control datepicker" placeholder="Pilih Tanggal" required="true" />
-                          <div class="input-group-append">
-                            <span class="input-group-text">
-                              <span class="glyphicon glyphicon-calendar"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group label-floating">
                         <label class="control-label">Silahkan <b>centang</b> jika sesuai dengan kondisi anda.
                         <label class="control-label"><i>Please <b>Check</b> if according to your condition.</i>
                       </div>
@@ -565,6 +536,36 @@ input[type=submit] {
                             <b>Apakah saat ini anda sedang pneumonia (sesak nafas) ringan hingga berat?</b>
                             </br><i>Are you currently having a pneumonia (shortness of breath)?</i>
                           </label>
+                        </div>
+                      </div>
+                      <p>
+                      <div class="form-group label-floating">
+                        <label class="control-label"><b>Dapat menunjukan sertifikat vaksin ke -1/ke -2 atau surat hasil Test Antigen NEGATIF*</b>
+                        </br><i>Can show vaccine certificate 1st/2nd or Antigen Test Result</i></label>
+                        <div class="form-inline form-group">
+                          <div class="form-check-radio">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="radio" name="sertifikat" id="vaksin" value="VAKSIN" required="true"> VAKSIN KE -1/KE -2
+                              <span class="form-check-sign mr-3"></span>
+                            </label>
+                          </div>
+                          <div class="form-check-radio">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="radio" name="sertifikat" id="antigen" value="ANTIGEN" required="true"> ANTIGEN
+                              <span class="form-check-sign"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group label-floating" id="antigen_input" style="display:none;">
+                        <label class="control-label">Tanggal Test Antigen <i>(Date of Antigen test)</i>*</label>
+                        <div class="input-group date">
+                          <input type="text" id="tgl_antigen" name="tgl_antigen" class="form-control datepicker" placeholder="Pilih Tanggal" required="true" />
+                          <div class="input-group-append">
+                            <span class="input-group-text">
+                              <span class="glyphicon glyphicon-calendar"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </span>
+                          </div>
                         </div>
                       </div>
                       <div class="form-group label-floating">

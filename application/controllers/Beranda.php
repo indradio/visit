@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+//load Guzzle Library
+require_once APPPATH.'third_party/guzzle/autoload.php';
+
 class Beranda extends CI_Controller {
 
 	public function index()
@@ -80,65 +83,148 @@ class Beranda extends CI_Controller {
 				'status' => '1'
 			];
 			$this->db->insert('visit', $data);
+			
 	
 			// Kirim via Whatsapp
 			if ($this->input->post('kewarganegaraan')=='WNI'){
 				if ($point1=='YA' OR $point2=='YA' OR $point3=='YA' OR $point4=='YA' OR $point5=='YA' OR $point6=='YA'){
-					$postData = array(
-						'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
-						'number' => '62'.$this->input->post('phone'),
-						'message' => "*Terima kasih, Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
-						"\r\nKami mohon maaf, Saat ini kami tidak dapat menerima kunjungan anda untuk alasan kesehatan" .
-						"\r\nKami akan segera menghubungi anda untuk mengatur kembali pertemuan ini."
+					
+					$client = new \GuzzleHttp\Client();
+					$response = $client->post(
+						'https://region01.krmpesan.com/api/v2/message/send-text',
+						[
+							'headers' => [
+								'Content-Type' => 'application/json',
+								'Accept' => 'application/json',
+								'Authorization' => 'Bearer zrIchFm6ewt2f18SbXRcNzSVXJrQBEsD1zrbjtxuZCyi6JfOAcRIQkrL6wEmChqVWwl0De3yxAhJAuKS',
+							],
+							'json' => [
+								'phone' 	=> '62'.$this->input->post('phone'),
+								'message' 	=> "*Terima kasih, Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
+								"\r\nKami mohon maaf, Saat ini kami tidak dapat menerima kunjungan anda untuk alasan kesehatan" .
+								"\r\nKami akan segera menghubungi anda untuk mengatur kembali pertemuan ini."
+							],
+						]
 					);
+					$body = $response->getBody();
+
+					$pic = $this->db->get_where('karyawan', ['nama' => $this->input->post('pic')])->row_array();
+					if (!empty($pic))
+					{
+						$client = new \GuzzleHttp\Client();
+						$response = $client->post(
+							'https://region01.krmpesan.com/api/v2/message/send-text',
+							[
+								'headers' => [
+									'Content-Type' => 'application/json',
+									'Accept' => 'application/json',
+									'Authorization' => 'Bearer zrIchFm6ewt2f18SbXRcNzSVXJrQBEsD1zrbjtxuZCyi6JfOAcRIQkrL6wEmChqVWwl0De3yxAhJAuKS',
+								],
+								'json' => [
+									'phone' 	=> $pic['phone'],
+									'message' 	=> "*Tamu Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
+									"\r\n \r\nNama : *" . $this->input->post('nama') . "*" .
+									"\r\nPerusahaan : *" . $this->input->post('perusahaan') . "*" .
+									"\r\nKeperluan : *" . $this->input->post('keperluan') . "*" .
+									"\r\nRencana Berkunjung : *" . date('d-m-Y H:i', strtotime($this->input->post('waktu_kunjungan'))) . "*" .
+									"\r\n \r\nMohon maaf, Tamu anda masuk dalam kategori *DILARANG* berkunjung demi alasan keselamatan" .
+									"\r\nHarap segera hubungi kembali untuk mengatur pertemuan menggunakan metode lainnya atau segera mengajukan penggunaan RUANG ISOLASI.".
+									"\r\nInfo lebih lengkap dapet menghubungi komite P2K3L."
+								],
+							]
+						);
+						$body = $response->getBody();
+					}
+				
 				}else{
-					$postData = array(
-						'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
-						'number' => '62'.$this->input->post('phone'),
-						'message' => "*Terima kasih, Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
-						"\r\nKode ID anda : ". $id .
-						"\r\nTunjukan Kartu Identitas dan Sertifikat Vaksin/Surat Hasil Antigen anda saat akan memasuki PT Astra Otoparts Divisi WINTEQ." .
-						"\r\nPT Astra Otoparts Divisi WINTEQ berhak untuk *“MEMBATALKAN/MENUNDA”* kunjungan anda untuk alasan keselamatan." .
-						"\r\n \r\n1. Tamu yang akan berkunjung wajib menggunakan Masker selama kunjungan" .
-						"\r\n2. Tamu yang akan berkunjung wajib mematuhi segala peraturan maupun himbauan selama kunjungan"
+
+					$client = new \GuzzleHttp\Client();
+					$response = $client->post(
+						'https://region01.krmpesan.com/api/v2/message/send-text',
+						[
+							'headers' => [
+								'Content-Type' => 'application/json',
+								'Accept' => 'application/json',
+								'Authorization' => 'Bearer zrIchFm6ewt2f18SbXRcNzSVXJrQBEsD1zrbjtxuZCyi6JfOAcRIQkrL6wEmChqVWwl0De3yxAhJAuKS',
+							],
+							'json' => [
+								'phone' 	=> '62'.$this->input->post('phone'),
+								'message' 	=> "*Terima kasih, Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
+								"\r\nKode ID anda : ". $id .
+								"\r\nTunjukan Kartu Identitas dan Sertifikat Vaksin/Surat Hasil Antigen anda saat akan memasuki PT Astra Otoparts Divisi WINTEQ." .
+								"\r\nPT Astra Otoparts Divisi WINTEQ berhak untuk *“MEMBATALKAN/MENUNDA”* kunjungan anda untuk alasan keselamatan." .
+								"\r\n \r\n1. Tamu yang akan berkunjung wajib menggunakan Masker selama kunjungan." .
+								"\r\n2. Tamu yang akan berkunjung wajib mematuhi segala peraturan maupun himbauan selama kunjungan."
+							],
+						]
 					);
+					$body = $response->getBody();
+
+					$pic = $this->db->get_where('karyawan', ['nama' => $this->input->post('pic')])->row_array();
+					if (!empty($pic))
+					{
+						$client = new \GuzzleHttp\Client();
+						$response = $client->post(
+							'https://region01.krmpesan.com/api/v2/message/send-text',
+							[
+								'headers' => [
+									'Content-Type' => 'application/json',
+									'Accept' => 'application/json',
+									'Authorization' => 'Bearer zrIchFm6ewt2f18SbXRcNzSVXJrQBEsD1zrbjtxuZCyi6JfOAcRIQkrL6wEmChqVWwl0De3yxAhJAuKS',
+								],
+								'json' => [
+									'phone' 	=> $pic['phone'],
+									'message' 	=> "*Tamu Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
+									"\r\n \r\nNama : *" . $this->input->post('nama') . "*" .
+									"\r\nPerusahaan : *" . $this->input->post('perusahaan') . "*" .
+									"\r\nKeperluan : *" . $this->input->post('keperluan') . "*" .
+									"\r\nRencana Berkunjung : *" . date('d-m-Y H:i', strtotime($this->input->post('waktu_kunjungan'))) . "*" .
+									"\r\n \r\nTamu anda masuk dalam kategori *DITERIMA* berkunjung." .
+									"\r\nTetap jaga kesehatan kamu dengan mematuhi himbauan dan kebijakan terkait pencegahan penyebaran covid-19.".
+									"\r\nInfo lebih lengkap dapet menghubungi komite P2K3L."
+								],
+							]
+						);
+						$body = $response->getBody();
+					}
+
 				}
 			}else{
-				$postData = array(
-					'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
-					'number' => '62'.$this->input->post('phone'),
-					'message' => "*Thank you for filling out THE HEALTH DECLARATION FORM*" .
-					"\r\nHello Mr/Mrs ".$this->input->post('nama').", We apologize that we could not accept your visit in the near future." .
-					"\r\nWe will contact you to arrange another meeting soon."
+
+				$client = new \GuzzleHttp\Client();
+				$response = $client->post(
+					'https://region01.krmpesan.com/api/v2/message/send-text',
+					[
+						'headers' => [
+							'Content-Type' => 'application/json',
+							'Accept' => 'application/json',
+							'Authorization' => 'Bearer zrIchFm6ewt2f18SbXRcNzSVXJrQBEsD1zrbjtxuZCyi6JfOAcRIQkrL6wEmChqVWwl0De3yxAhJAuKS',
+						],
+						'json' => [
+							'phone' 	=> '62'.$this->input->post('phone'),
+							'message' 	=> "*Thank you for filling out THE HEALTH DECLARATION FORM*" .
+							"\r\nHello Mr/Mrs ".$this->input->post('nama').", We apologize that we could not accept your visit in the near future." .
+							"\r\nWe will contact you to arrange another meeting soon."
+						],
+					]
 				);
-			}
-	
-			$ch = curl_init();
-	
-			curl_setopt($ch, CURLOPT_URL, 'https://ws.premiumfast.net/api/v1/message/send');
-			curl_setopt($ch, CURLOPT_POST, 1);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
-			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			
-			$headers = array();
-			$headers[] = 'Accept: application/json';
-			$headers[] = 'Authorization: Bearer 4495c8929e574477a9167352d529969cded0eb310cd936ecafa011dc48f2921b';
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			
-			$result = curl_exec($ch);
-	
-			//WA to Anchila
-			$pic = $this->db->get_where('karyawan', ['nama' => $this->input->post('pic')])->row_array();
-			if (!empty($pic))
-			{
-				if ($this->input->post('kewarganegaraan')=='WNI'){
-					if ($point1=='YA' OR $point2=='YA' OR $point3=='YA' OR $point4=='YA' OR $point5=='YA' OR $point6=='YA'){
-						$postData = array(
-							'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
-							'number' => $pic['phone'],
-							'message' => "*Tamu Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
+				$body = $response->getBody();
+
+				$pic = $this->db->get_where('karyawan', ['nama' => $this->input->post('pic')])->row_array();
+				if (!empty($pic))
+				{
+					$client = new \GuzzleHttp\Client();
+					$response = $client->post(
+						'https://region01.krmpesan.com/api/v2/message/send-text',
+						[
+							'headers' => [
+								'Content-Type' => 'application/json',
+								'Accept' => 'application/json',
+								'Authorization' => 'Bearer zrIchFm6ewt2f18SbXRcNzSVXJrQBEsD1zrbjtxuZCyi6JfOAcRIQkrL6wEmChqVWwl0De3yxAhJAuKS',
+							],
+							'json' => [
+								'phone' 	=> $pic['phone'],
+								'message' 	=> "*Tamu Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
 								"\r\n \r\nNama : *" . $this->input->post('nama') . "*" .
 								"\r\nPerusahaan : *" . $this->input->post('perusahaan') . "*" .
 								"\r\nKeperluan : *" . $this->input->post('keperluan') . "*" .
@@ -146,52 +232,14 @@ class Beranda extends CI_Controller {
 								"\r\n \r\nMohon maaf, Tamu anda masuk dalam kategori *DILARANG* berkunjung demi alasan keselamatan" .
 								"\r\nHarap segera hubungi kembali untuk mengatur pertemuan menggunakan metode lainnya atau segera mengajukan penggunaan RUANG ISOLASI.".
 								"\r\nInfo lebih lengkap dapet menghubungi komite P2K3L."
-						);
-					}else{
-						$postData = array(
-							'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
-							'number' => $pic['phone'],
-							'message' => "*Tamu Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
-								"\r\n \r\nNama : *" . $this->input->post('nama') . "*" .
-								"\r\nPerusahaan : *" . $this->input->post('perusahaan') . "*" .
-								"\r\nKeperluan : *" . $this->input->post('keperluan') . "*" .
-								"\r\nRencana Berkunjung : *" . date('d-m-Y H:i', strtotime($this->input->post('waktu_kunjungan'))) . "*" .
-								"\r\n \r\nTamu anda masuk dalam kategori *DITERIMA* berkunjung." .
-								"\r\nTetap jaga kesehatan kamu dengan mematuhi himbauan dan kebijakan terkait pencegahan penyebaran covid-19.".
-								"\r\nInfo lebih lengkap dapet menghubungi komite P2K3L."
-						);
-					}
-				}else{
-					$postData = array(
-						'deviceid' => 'ed59bffb-7ffd-4ac2-b039-b4725fdd4010',
-						'number' => $pic['phone'],
-						'message' => "*Tamu Anda telah mengisi FORM DEKLARASI KESEHATAN*" .
-							"\r\n \r\nNama : *" . $this->input->post('nama') . "*" .
-							"\r\nPerusahaan : *" . $this->input->post('perusahaan') . "*" .
-							"\r\nKeperluan : *" . $this->input->post('keperluan') . "*" .
-							"\r\nRencana Berkunjung : *" . date('d-m-Y H:i', strtotime($this->input->post('waktu_kunjungan'))) . "*" .
-							"\r\n \r\nMohon maaf, Tamu anda masuk dalam kategori *DILARANG* berkunjung demi alasan keselamatan" .
-							"\r\nHarap segera hubungi kembali untuk mengatur pertemuan menggunakan metode lainnya atau segera mengajukan penggunaan RUANG ISOLASI.".
-							"\r\nInfo lebih lengkap dapet menghubungi komite P2K3L."
+							],
+						]
 					);
+					$body = $response->getBody();
 				}
-		
-				$ch = curl_init();
-		
-				curl_setopt($ch, CURLOPT_URL, 'https://ws.premiumfast.net/api/v1/message/send');
-				curl_setopt($ch, CURLOPT_POST, 1);
-				curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
-				curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-				
-				$headers = array();
-				$headers[] = 'Accept: application/json';
-				$headers[] = 'Authorization: Bearer 4495c8929e574477a9167352d529969cded0eb310cd936ecafa011dc48f2921b';
-				curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-				
-				$result = curl_exec($ch);
+					
 			}
+
 	
 			redirect('beranda/berhasil/' . $id);
 			
