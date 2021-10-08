@@ -483,21 +483,21 @@ input[type=submit] {
                           <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" id="point1" name="point1" value="YA">
                             <span class="form-check-sign"></span>
-                            <b>Apakah dalam 14 hari terakhir anda memiliki riwayat perjalanan ke Cina atau negara/wilayah terjangkit virus corona?</b>
-                            </br><i>Have you had a history of travel to China or the country / region affected by the corona virus in the past 14 days?</i>
+                            <b>Apakah dalam 14 hari terakhir anda memiliki riwayat perjalanan ke negara/wilayah terjangkit virus corona?</b>
+                            </br><i>Have you had a history of travel to the country / region affected by the corona virus in the past 14 days?</i>
                           </label>
                         </div>
                       </div>
-                      <div class="form-group label-floating">
+                      <!-- <div class="hidden form-group label-floating">
                         <div class="form-check">
-                          <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" id="point2" name="point2" value="YA">
-                            <span class="form-check-sign"></span>
+                          <label class="form-check-label"> -->
+                            <input class="form-check-input" type="hidden" id="point2" name="point2" value="YA">
+                            <!-- <span class="form-check-sign"></span>
                             <b>Apakah dalam 14 hari terakhir anda pernah melakukan interaksi dengan Warga Negara Asing dari negara/wilayah terjangkit virus corona?</b>
                             </br><i>Have you had an interacted with Foreigners from countries / regions affected by the corona virus?</i>
                           </label>
                         </div>
-                      </div>
+                      </div> -->
                       <div class="form-group label-floating">
                         <div class="form-check">
                           <label class="form-check-label">
@@ -513,8 +513,8 @@ input[type=submit] {
                           <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" id="point4" name="point4" value="YA">
                             <span class="form-check-sign"></span>
-                            <b>Apakah dalam 3 hari terakhir anda mengalami demam dengan suhu tubuh > 38°C?</b>
-                            </br><i>Whether in the last 3 days you have a fever with a body temperature > 38°C?</i>
+                            <b>Apakah dalam 3 hari terakhir anda mengalami demam dengan suhu tubuh > 37°C?</b>
+                            </br><i>Whether in the last 3 days you have a fever with a body temperature > 37°C?</i>
                           </label>
                         </div>
                       </div>
