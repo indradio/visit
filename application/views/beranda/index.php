@@ -123,6 +123,7 @@ input[type=submit] {
           <li class="nav-item">
             <a class="btn btn-round btn-primary" href="#">
               <i class="nc-icon nc-send"></i> FORM DEKLARASI KESEHATAN
+              <br><small>Health Declaration Form</small></br>
             </a>
           </li>
         </ul>
@@ -483,8 +484,8 @@ input[type=submit] {
                           <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" id="point1" name="point1" value="YA">
                             <span class="form-check-sign"></span>
-                            <b>Apakah dalam 14 hari terakhir anda memiliki riwayat perjalanan ke negara/wilayah terjangkit virus corona?</b>
-                            </br><i>Have you had a history of travel to the country / region affected by the corona virus in the past 14 days?</i>
+                            <b>Apakah dalam 14 hari terakhir anda memiliki riwayat perjalanan ke luar negeri</b>
+                            </br><i>Have you had a history of travel to overseas in the past 14 days?</i>
                           </label>
                         </div>
                       </div>
@@ -504,7 +505,7 @@ input[type=submit] {
                             <input class="form-check-input" type="checkbox" id="point3" name="point3" value="YA">
                             <span class="form-check-sign"></span>
                             <b>Apakah anda pernah melakukan interaksi dengan keluarga/kerabat yang menjadi suspect bahkan positif terjangkit virus corona?</b>
-                            </br><i>Have you had an interactedwith family / relatives who have been suspected or even positively infected by the corona virus?</i>
+                            </br><i>Have you had an interacted with family / relatives who have been suspected or even positively infected by the corona virus?</i>
                           </label>
                         </div>
                       </div>
@@ -513,8 +514,8 @@ input[type=submit] {
                           <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" id="point4" name="point4" value="YA">
                             <span class="form-check-sign"></span>
-                            <b>Apakah dalam 3 hari terakhir anda mengalami demam dengan suhu tubuh > 37°C?</b>
-                            </br><i>Whether in the last 3 days you have a fever with a body temperature > 37°C?</i>
+                            <b>Apakah dalam 3 hari terakhir anda mengalami demam dengan suhu tubuh > 37.5°C?</b>
+                            </br><i>Whether in the last 3 days you have a fever with a body temperature > 37.5°C?</i>
                           </label>
                         </div>
                       </div>
@@ -524,11 +525,11 @@ input[type=submit] {
                             <input class="form-check-input" type="checkbox" id="point5" name="point5" value="YA">
                             <span class="form-check-sign"></span>
                             <b>Apakah saat ini anda sedang batuk/pilek/nyeri tenggorokan?</b>
-                            </br><i>Are you currently coughing / runny nose / sore throat?</i>
+                            </br><i>Are you currently have cough / runny nose / sore throat?</i>
                           </label>
                         </div>
                       </div>
-                      <div class="form-group label-floating">
+                      <!-- <div class="form-group label-floating">
                         <div class="form-check">
                           <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" id="point6" name="point6" value="YA">
@@ -537,11 +538,11 @@ input[type=submit] {
                             </br><i>Are you currently having a pneumonia (shortness of breath)?</i>
                           </label>
                         </div>
-                      </div>
+                      </div> -->
                       <p>
                       <div class="form-group label-floating">
                         <label class="control-label"><b>Dapat menunjukan sertifikat vaksin ke -1/ke -2 atau surat hasil Test Antigen NEGATIF*</b>
-                        </br><i>Can show vaccine certificate 1st/2nd or Antigen Test Result</i></label>
+                        </br><i>Can show vaccine certificate 1st/2nd dose or Antigen Test Result</i></label>
                         <div class="form-inline form-group">
                           <div class="form-check-radio">
                             <label class="form-check-label">
@@ -567,7 +568,7 @@ input[type=submit] {
                             </span>
                           </div>
                         </div>
-                        <label class="control-label"><small>*<i>Surat hasil Test ANTIGEN hanya berlaku maksimal 2 Hari.</i></label>
+                        <label class="control-label"><small>*<i>Surat hasil Test ANTIGEN hanya berlaku maksimal 2x24 Jam sebelum kunjungan (Antigen Test result valid within 2x24 Hour prior time visit)</i></label>
                       </div>
                       <div class="form-group label-floating">
                         <label class="control-label"><small>* Wajib diisi <i>(Required)</i></label>
@@ -579,7 +580,7 @@ input[type=submit] {
                               <input class="form-check-input" type="checkbox" id="check" value="" required="true">
                               <span class="form-check-sign"></span>
                               Saya sudah membaca dengan seksama dan saya sudah memberikan informasi yang benar. Saya siap menerima konsekuensi hukum yang muncul jika data yang saya berikan salah.
-                              <br><i>I have read carefully and I have given correct information. I am ready to accept the legal consequences that arise if the data I provide is wrong.</i>
+                              <br><i>I have read carefully and have given correct information. I am ready to accept the legal consequences that arise if the data I provide is wrong.</i>
                             </label>
                           </div>
                         </div>
