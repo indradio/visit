@@ -525,7 +525,7 @@ input[type=submit] {
                             <input class="form-check-input" type="checkbox" id="point5" name="point5" value="YA">
                             <span class="form-check-sign"></span>
                             <b>Apakah saat ini anda sedang batuk/pilek/nyeri tenggorokan?</b>
-                            </br><i>Are you currently have cough / runny nose / sore throat?</i>
+                            </br><i>Are you currently having cough / runny nose / sore throat?</i>
                           </label>
                         </div>
                       </div>
