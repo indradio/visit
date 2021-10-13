@@ -531,9 +531,9 @@ input[type=submit] {
                       </div>
                       <!-- <div class="form-group label-floating">
                         <div class="form-check">
-                          <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" id="point6" name="point6" value="YA">
-                            <span class="form-check-sign"></span>
+                          <label class="form-check-label"> -->
+                            <input class="form-check-input" type="hidden" id="point6" name="point6" value="YA">
+                            <!-- <span class="form-check-sign"></span>
                             <b>Apakah saat ini anda sedang pneumonia (sesak nafas) ringan hingga berat?</b>
                             </br><i>Are you currently having a pneumonia (shortness of breath)?</i>
                           </label>
