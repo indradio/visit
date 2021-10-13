@@ -492,7 +492,7 @@ input[type=submit] {
                       <!-- <div class="hidden form-group label-floating">
                         <div class="form-check">
                           <label class="form-check-label"> -->
-                            <input class="form-check-input" type="hidden" id="point2" name="point2" value="YA">
+                            <input class="form-check-input" type="hidden" id="point2" name="point2" value="">
                             <!-- <span class="form-check-sign"></span>
                             <b>Apakah dalam 14 hari terakhir anda pernah melakukan interaksi dengan Warga Negara Asing dari negara/wilayah terjangkit virus corona?</b>
                             </br><i>Have you had an interacted with Foreigners from countries / regions affected by the corona virus?</i>
@@ -532,7 +532,7 @@ input[type=submit] {
                       <!-- <div class="form-group label-floating">
                         <div class="form-check">
                           <label class="form-check-label"> -->
-                            <input class="form-check-input" type="hidden" id="point6" name="point6" value="YA">
+                            <input class="form-check-input" type="hidden" id="point6" name="point6" value="">
                             <!-- <span class="form-check-sign"></span>
                             <b>Apakah saat ini anda sedang pneumonia (sesak nafas) ringan hingga berat?</b>
                             </br><i>Are you currently having a pneumonia (shortness of breath)?</i>
