@@ -561,7 +561,7 @@ input[type=submit] {
                       <div class="form-group label-floating" id="antigen_input" style="display:none;">
                         <label class="control-label">Tanggal Test Antigen <i>(Date of Antigen test)</i>*</label>
                         <div class="input-group date">
-                          <input type="text" id="tgl_antigen" name="tgl_antigen" class="form-control datepicker" placeholder="Pilih Tanggal" required="true" />
+                          <input type="text" id="tgl_antigen" name="tgl_antigen" class="form-control datepicker" placeholder="Pilih Tanggal" value="<?= date('Y-m-d'); ?>" required="true" />
                           <div class="input-group-append">
                             <span class="input-group-text">
                               <span class="glyphicon glyphicon-calendar"><i class="fa fa-calendar" aria-hidden="true"></i></span>
